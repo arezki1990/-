@@ -42,7 +42,27 @@ app.set('view cache', false);
 swig.setDefaults({ cache: false });
 // Routes
 app.route('/').get(function(req,res){
-   var tlp=swig.renderFile('views/index.html', {});
+   var tlp=swig.renderFile('views/index.html', {"active":"index"});
+   res.send(tlp)
+});
+app.route('/talabate').get(function(req,res){
+   var tlp=swig.renderFile('views/talabate.html', {"active":"talabate"});
+   res.send(tlp)
+});
+app.route('/FAQ').get(function(req,res){
+   var tlp=swig.renderFile('views/FAQ.html', {"active":"FAQ"});
+   res.send(tlp)
+});
+app.route('/conditions').get(function(req,res){
+   var tlp=swig.renderFile('views/conditions.html', {"active":"conditions"});
+   res.send(tlp)
+});
+app.route('/contact').get(function(req,res){
+   var tlp=swig.renderFile('views/contact.html', {"active":"contact"});
+   res.send(tlp)
+});
+app.route('/hissabi').get(function(req,res){
+   var tlp=swig.renderFile('views/hissabi.html', {"active":"hissabi"});
    res.send(tlp)
 });
 
